@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">MVVMNewsApp</string>
+
+    <!-- Menu -->
+    <string name="menu_homepage">Homepage</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_saved">Saved</string>
+
 </resources>
