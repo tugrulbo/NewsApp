@@ -1,4 +1,4 @@
-package com.tugrulbo.mvvmnewsapp.ui.fragments
+package com.tugrulbo.mvvmnewsapp.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
