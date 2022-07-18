@@ -7,10 +7,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.tugrulbo.mvvmnewsapp.R
 import com.tugrulbo.mvvmnewsapp.adapters.NewsAdapter
 import com.tugrulbo.mvvmnewsapp.databinding.HomepageFragmentBinding
 import com.tugrulbo.mvvmnewsapp.ui.NewsViewModel
@@ -40,6 +43,7 @@ class HomepageFragment : Fragment() {
         viewModel = (activity as MainActivity).viewModel
         setupRecyclerView()
     }
+
     private fun setupRecyclerView(){
         newsAdapter = NewsAdapter()
         binding.rvBreakingNews.apply {
@@ -66,6 +70,14 @@ class HomepageFragment : Fragment() {
                 }
             }
         })
+
+        newsAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply {
+                putSerializable("article",it)
+            }
+
+            findNavController().navigate(R.id.action_homepageFragment_to_newsDetailFragment,bundle)
+        }
     }
 
     private fun hideProgressBar(){

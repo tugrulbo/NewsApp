@@ -13,12 +13,6 @@
         <action
             android:id="@+id/action_homepageFragment_to_newsDetailFragment"
             app:destination="@id/newsDetailFragment" />
-        <action
-            android:id="@+id/action_homepageFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
-        <action
-            android:id="@+id/action_homepageFragment_to_savedFragment"
-            app:destination="@id/savedFragment" />
     </fragment>
     <fragment
         android:id="@+id/savedFragment"
@@ -28,12 +22,6 @@
         <action
             android:id="@+id/action_savedFragment_to_newsDetailFragment"
             app:destination="@id/newsDetailFragment" />
-        <action
-            android:id="@+id/action_savedFragment_to_homepageFragment"
-            app:destination="@id/homepageFragment" />
-        <action
-            android:id="@+id/action_savedFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
@@ -43,16 +31,16 @@
         <action
             android:id="@+id/action_searchFragment_to_newsDetailFragment"
             app:destination="@id/newsDetailFragment" />
-        <action
-            android:id="@+id/action_searchFragment_to_savedFragment"
-            app:destination="@id/savedFragment" />
-        <action
-            android:id="@+id/action_searchFragment_to_homepageFragment"
-            app:destination="@id/homepageFragment" />
     </fragment>
     <fragment
         android:id="@+id/newsDetailFragment"
         android:name="com.tugrulbo.mvvmnewsapp.ui.fragments.news_detail.NewsDetailFragment"
         android:label="news_detail_fragment"
-        tools:layout="@layout/news_detail_fragment" />
+        tools:layout="@layout/news_detail_fragment" >
+        <argument
+            android:name="article"
+            app:argType="com.tugrulbo.mvvmnewsapp.models.Article"/>
+    </fragment>
+
+
 </navigation>
