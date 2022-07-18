@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="@string/menu_homepage"
+    <item
+        android:id="@+id/homepageFragment"
+        android:title="@string/menu_homepage"
         android:icon="@drawable/ic_home"/>
 
-    <item android:title="@string/menu_search"
+    <item
+        android:id="@+id/searchFragment"
+        android:title="@string/menu_search"
         android:icon="@drawable/ic_search"/>
 
-    <item android:title="@string/menu_saved"
+    <item
+        android:id="@+id/savedFragment"
+        android:title="@string/menu_saved"
         android:icon="@drawable/ic_save"/>
 
 </menu>
