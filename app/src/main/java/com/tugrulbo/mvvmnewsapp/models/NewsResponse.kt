@@ -1,4 +1,4 @@
-package com.tugrulbo.mvvmnewsapp.ui.fragments
+package com.tugrulbo.mvvmnewsapp.models
 
 
 import com.google.gson.annotations.SerializedName
