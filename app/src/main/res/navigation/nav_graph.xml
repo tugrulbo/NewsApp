@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homepageFragment">
+
+    <fragment
+        android:id="@+id/homepageFragment"
+        android:name="com.tugrulbo.mvvmnewsapp.ui.fragments.homepage.HomepageFragment"
+        android:label="homepage_fragment"
+        tools:layout="@layout/homepage_fragment" />
+    <fragment
+        android:id="@+id/savedFragment"
+        android:name="com.tugrulbo.mvvmnewsapp.ui.fragments.saved.SavedFragment"
+        android:label="saved_fragment"
+        tools:layout="@layout/saved_fragment" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.tugrulbo.mvvmnewsapp.ui.fragments.search.SearchFragment"
+        android:label="search_fragment"
+        tools:layout="@layout/search_fragment" />
+    <fragment
+        android:id="@+id/newsDetailFragment"
+        android:name="com.tugrulbo.mvvmnewsapp.ui.fragments.news_detail.NewsDetailFragment"
+        android:label="news_detail_fragment"
+        tools:layout="@layout/news_detail_fragment" />
+</navigation>
