@@ -10,11 +10,12 @@ import androidx.fragment.app.viewModels
 import com.tugrulbo.mvvmnewsapp.R
 import com.tugrulbo.mvvmnewsapp.databinding.SavedFragmentBinding
 import com.tugrulbo.mvvmnewsapp.ui.NewsViewModel
+import com.tugrulbo.mvvmnewsapp.ui.activity.MainActivity
 
 class SavedFragment : Fragment() {
 
     private lateinit var binding: SavedFragmentBinding
-    private val viewModel:NewsViewModel by viewModels()
+    private lateinit var viewModel:NewsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,6 +23,11 @@ class SavedFragment : Fragment() {
     ): View? {
         binding = SavedFragmentBinding.inflate(inflater,container,false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel = (activity as MainActivity).viewModel
     }
 
 

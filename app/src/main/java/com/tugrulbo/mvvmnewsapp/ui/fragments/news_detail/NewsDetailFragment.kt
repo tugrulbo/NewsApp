@@ -10,11 +10,12 @@ import androidx.fragment.app.viewModels
 import com.tugrulbo.mvvmnewsapp.R
 import com.tugrulbo.mvvmnewsapp.databinding.NewsDetailFragmentBinding
 import com.tugrulbo.mvvmnewsapp.ui.NewsViewModel
+import com.tugrulbo.mvvmnewsapp.ui.activity.MainActivity
 
 class NewsDetailFragment : Fragment() {
 
     lateinit var binding: NewsDetailFragmentBinding
-    private val viewModel: NewsViewModel by viewModels()
+    lateinit var viewModel: NewsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,4 +25,8 @@ class NewsDetailFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel = (activity as MainActivity).viewModel
+    }
 }
