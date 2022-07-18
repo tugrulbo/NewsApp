@@ -6,27 +6,23 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.tugrulbo.mvvmnewsapp.R
+import com.tugrulbo.mvvmnewsapp.databinding.SavedFragmentBinding
+import com.tugrulbo.mvvmnewsapp.ui.NewsViewModel
 
 class SavedFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = SavedFragment()
-    }
-
-    private lateinit var viewModel: SavedViewModel
+    private lateinit var binding: SavedFragmentBinding
+    private val viewModel:NewsViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.saved_fragment, container, false)
+        binding = SavedFragmentBinding.inflate(inflater,container,false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(SavedViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
 
 }

@@ -6,27 +6,24 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.viewModels
+import androidx.fragment.app.viewModels
 import com.tugrulbo.mvvmnewsapp.R
+import com.tugrulbo.mvvmnewsapp.databinding.HomepageFragmentBinding
+import com.tugrulbo.mvvmnewsapp.ui.NewsViewModel
 
 class HomepageFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = HomepageFragment()
-    }
-
-    private lateinit var viewModel: HomepageViewModel
+    lateinit var binding: HomepageFragmentBinding
+    private val viewModel: NewsViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.homepage_fragment, container, false)
+        binding = HomepageFragmentBinding.inflate(inflater,container,false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(HomepageViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
 
 }
