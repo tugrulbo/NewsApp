@@ -4,6 +4,7 @@ package com.tugrulbo.mvvmnewsapp.models
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 
 @Entity(
@@ -28,4 +29,13 @@ data class Article(
     var url: String,
     @SerializedName("urlToImage")
     var urlToImage: String
-)
+):Serializable {
+
+    override fun hashCode(): Int {
+        var result = id.hashCode()
+        if(url.isNullOrEmpty()){
+            result = 1 * result + url.hashCode()
+        }
+        return result
+    }
+}

@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.tugrulbo.mvvmnewsapp.R
@@ -45,6 +46,7 @@ class SearchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = (activity as MainActivity).viewModel
         setupRecyclerView()
+
         var job: Job? = null
         binding.etSearch.addTextChangedListener {editable->
             job?.cancel()
@@ -87,6 +89,14 @@ class SearchFragment : Fragment() {
                 }
             }
         })
+
+        newsAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply {
+                putSerializable("article",it)
+            }
+
+            findNavController().navigate(R.id.action_searchFragment_to_newsDetailFragment,bundle)
+        }
     }
 
     private fun hideProgressBar(){
