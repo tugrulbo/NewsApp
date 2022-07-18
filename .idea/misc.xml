@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/tugrulbo/Documents/GitHub/MVVMNewsApp/app/src/main/res/layout/activity_main.xml" value="0.3161231884057971" />
+        <entry key="..\:/Users/tugrulbo/Documents/GitHub/MVVMNewsApp/app/src/main/res/layout/blank_fragment.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/tugrulbo/Documents/GitHub/MVVMNewsApp/app/src/main/res/layout/homepage_fragment.xml" value="0.30791788856304986" />
         <entry key="..\:/Users/tugrulbo/Documents/GitHub/MVVMNewsApp/app/src/main/res/layout/item_article_preview.xml" value="0.3161231884057971" />
         <entry key="..\:/Users/tugrulbo/Documents/GitHub/MVVMNewsApp/app/src/main/res/layout/news_detail_fragment.xml" value="0.3161231884057971" />
         <entry key="..\:/Users/tugrulbo/Documents/GitHub/MVVMNewsApp/app/src/main/res/layout/search_fragment.xml" value="0.3161231884057971" />
