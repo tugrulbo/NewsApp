@@ -20,6 +20,7 @@ import com.tugrulbo.mvvmnewsapp.databinding.SearchFragmentBinding
 import com.tugrulbo.mvvmnewsapp.ui.NewsViewModel
 import com.tugrulbo.mvvmnewsapp.ui.activity.MainActivity
 import com.tugrulbo.mvvmnewsapp.util.Constants
+import com.tugrulbo.mvvmnewsapp.util.Constants.BUNDLE_KEY
 import com.tugrulbo.mvvmnewsapp.util.Constants.SEARCH_NEWS_TIME_DELAY
 import com.tugrulbo.mvvmnewsapp.util.Resource
 import com.tugrulbo.mvvmnewsapp.util.extensions.showMessage
@@ -133,7 +134,7 @@ class SearchFragment : Fragment() {
 
         newsAdapter.setOnItemClickListener {
             val bundle = Bundle().apply {
-                putSerializable("article",it)
+                putSerializable(BUNDLE_KEY,it)
             }
 
             findNavController().navigate(R.id.action_searchFragment_to_newsDetailFragment,bundle)

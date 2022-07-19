@@ -12,6 +12,7 @@ import com.tugrulbo.mvvmnewsapp.models.Article
 
 import com.tugrulbo.mvvmnewsapp.models.NewsResponse
 import com.tugrulbo.mvvmnewsapp.repository.NewsRepository
+import com.tugrulbo.mvvmnewsapp.util.Constants.COUNTRY_CODE
 import com.tugrulbo.mvvmnewsapp.util.Resource
 import kotlinx.coroutines.launch
 import retrofit2.Response
@@ -32,7 +33,7 @@ class NewsViewModel(
     var searchNewsResponse:NewsResponse? = null
 
     init {
-        getBreakingNews("tr")
+        getBreakingNews(COUNTRY_CODE)
     }
 
     fun getBreakingNews(countryCode:String) = viewModelScope.launch {

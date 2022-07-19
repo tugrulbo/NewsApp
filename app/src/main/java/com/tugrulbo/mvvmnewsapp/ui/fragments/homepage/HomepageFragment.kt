@@ -19,6 +19,8 @@ import com.tugrulbo.mvvmnewsapp.adapters.NewsAdapter
 import com.tugrulbo.mvvmnewsapp.databinding.HomepageFragmentBinding
 import com.tugrulbo.mvvmnewsapp.ui.NewsViewModel
 import com.tugrulbo.mvvmnewsapp.ui.activity.MainActivity
+import com.tugrulbo.mvvmnewsapp.util.Constants.BUNDLE_KEY
+import com.tugrulbo.mvvmnewsapp.util.Constants.COUNTRY_CODE
 import com.tugrulbo.mvvmnewsapp.util.Constants.QUERY_PAGE_SIZE
 import com.tugrulbo.mvvmnewsapp.util.Resource
 import com.tugrulbo.mvvmnewsapp.util.extensions.isVisible
@@ -65,7 +67,7 @@ class HomepageFragment : Fragment() {
             val isTotalMoreThanVisible = totalItemCount >= QUERY_PAGE_SIZE
             val shouldPaginate = isNotLoadingAndNotLastPage && isLastItem && isNotAtBeginning && isTotalMoreThanVisible && isScrolling
             if(shouldPaginate){
-                viewModel.getBreakingNews("tr")
+                viewModel.getBreakingNews(COUNTRY_CODE)
                 isScrolling = false
             }
         }
@@ -115,7 +117,7 @@ class HomepageFragment : Fragment() {
 
         newsAdapter.setOnItemClickListener {
             val bundle = Bundle().apply {
-                putSerializable("article",it)
+                putSerializable(BUNDLE_KEY,it)
             }
 
             findNavController().navigate(R.id.action_homepageFragment_to_newsDetailFragment,bundle)

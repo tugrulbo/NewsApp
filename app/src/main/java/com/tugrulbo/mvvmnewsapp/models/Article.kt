@@ -4,11 +4,12 @@ package com.tugrulbo.mvvmnewsapp.models
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import com.tugrulbo.mvvmnewsapp.util.Constants.DATABASE_TABLE_NAME
 import java.io.Serializable
 
 
 @Entity(
-    tableName = "articles"
+    tableName = DATABASE_TABLE_NAME
 )
 data class Article(
     @PrimaryKey(autoGenerate = true)
