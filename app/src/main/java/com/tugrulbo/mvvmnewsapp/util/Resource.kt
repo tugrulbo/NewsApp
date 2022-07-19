@@ -1,6 +1,5 @@
 package com.tugrulbo.mvvmnewsapp.util
 
-import javax.xml.transform.Source
 
 sealed class Resource<T>(
     val data:T? = null,

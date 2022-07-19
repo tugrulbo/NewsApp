@@ -6,4 +6,14 @@ object Constants {
     const val BASE_URL = "https://newsapi.org/"
     const val SEARCH_NEWS_TIME_DELAY = 500L
     const val QUERY_PAGE_SIZE = 20
+
+    //DATABASE
+    const val DATABASE_NAME  = "article_db.db"
+    const val DATABASE_TABLE_NAME = "articles"
+
+    //BUNDlE
+    const val BUNDLE_KEY = "article"
+
+    //COUNTRY CODE
+    const val COUNTRY_CODE = "tr"
 }

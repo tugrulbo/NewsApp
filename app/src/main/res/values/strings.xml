@@ -6,5 +6,6 @@
     <string name="menu_search">Search</string>
     <string name="menu_saved">Saved</string>
     <string name="saved_successfully">Article saved successfully</string>
+    <string name="deleted_successfully">Article deleted successfully</string>
 
 </resources>

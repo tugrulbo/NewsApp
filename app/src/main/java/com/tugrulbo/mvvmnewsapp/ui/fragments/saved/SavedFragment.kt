@@ -18,6 +18,7 @@ import com.tugrulbo.mvvmnewsapp.adapters.NewsAdapter
 import com.tugrulbo.mvvmnewsapp.databinding.SavedFragmentBinding
 import com.tugrulbo.mvvmnewsapp.ui.NewsViewModel
 import com.tugrulbo.mvvmnewsapp.ui.activity.MainActivity
+import com.tugrulbo.mvvmnewsapp.util.Constants.BUNDLE_KEY
 import com.tugrulbo.mvvmnewsapp.util.extensions.showMessage
 
 class SavedFragment : Fragment() {
@@ -65,7 +66,7 @@ class SavedFragment : Fragment() {
                 val article = newsAdapter.differ.currentList[position]
                 viewModel.deleteArticle(article)
                 view?.let {
-                    Snackbar.make(it,"Article deleted successfully",Snackbar.LENGTH_LONG).apply {
+                    Snackbar.make(it,getString(R.string.deleted_successfully),Snackbar.LENGTH_LONG).apply {
                         setAction("Undo"){
                             viewModel.saveArticle(article)
                         }
@@ -86,7 +87,7 @@ class SavedFragment : Fragment() {
 
         newsAdapter.setOnItemClickListener {
             val bundle = Bundle().apply {
-                putSerializable("article",it)
+                putSerializable(BUNDLE_KEY,it)
             }
 
             findNavController().navigate(R.id.action_savedFragment_to_newsDetailFragment,bundle)

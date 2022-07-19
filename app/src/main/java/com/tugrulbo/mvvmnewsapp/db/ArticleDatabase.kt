@@ -3,6 +3,7 @@ package com.tugrulbo.mvvmnewsapp.db
 import android.content.Context
 import androidx.room.*
 import com.tugrulbo.mvvmnewsapp.models.Article
+import com.tugrulbo.mvvmnewsapp.util.Constants.DATABASE_NAME
 
 @Database(
     entities = [Article::class],
@@ -27,7 +28,7 @@ abstract class ArticleDatabase:RoomDatabase() {
             Room.databaseBuilder(
                 context.applicationContext,
                 ArticleDatabase::class.java,
-                "article_db.db"
+                DATABASE_NAME
             )
                 .fallbackToDestructiveMigration()
                 .build()
