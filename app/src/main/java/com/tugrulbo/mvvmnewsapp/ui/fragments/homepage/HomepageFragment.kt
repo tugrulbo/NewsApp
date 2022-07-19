@@ -22,6 +22,7 @@ import com.tugrulbo.mvvmnewsapp.ui.activity.MainActivity
 import com.tugrulbo.mvvmnewsapp.util.Constants.QUERY_PAGE_SIZE
 import com.tugrulbo.mvvmnewsapp.util.Resource
 import com.tugrulbo.mvvmnewsapp.util.extensions.isVisible
+import com.tugrulbo.mvvmnewsapp.util.extensions.showMessage
 
 class HomepageFragment : Fragment() {
 
@@ -103,7 +104,7 @@ class HomepageFragment : Fragment() {
                 is Resource.Error -> {
                     hideProgressBar()
                     response.message?.let { message->
-                        Log.e(TAG,message)
+                        showMessage(message)
                     }
                 }
                 is Resource.Loading -> {

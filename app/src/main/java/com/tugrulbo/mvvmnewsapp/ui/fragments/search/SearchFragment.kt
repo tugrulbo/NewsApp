@@ -22,6 +22,7 @@ import com.tugrulbo.mvvmnewsapp.ui.activity.MainActivity
 import com.tugrulbo.mvvmnewsapp.util.Constants
 import com.tugrulbo.mvvmnewsapp.util.Constants.SEARCH_NEWS_TIME_DELAY
 import com.tugrulbo.mvvmnewsapp.util.Resource
+import com.tugrulbo.mvvmnewsapp.util.extensions.showMessage
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
@@ -121,7 +122,7 @@ class SearchFragment : Fragment() {
                 is Resource.Error -> {
                     hideProgressBar()
                     response.message?.let { message->
-                        Log.e(TAG,message)
+                        showMessage(message)
                     }
                 }
                 is Resource.Loading -> {
