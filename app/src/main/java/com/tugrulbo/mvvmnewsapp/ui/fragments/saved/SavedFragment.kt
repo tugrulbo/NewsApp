@@ -89,7 +89,7 @@ class SavedFragment : Fragment() {
                 putSerializable("article",it)
             }
 
-            findNavController().navigate(R.id.action_searchFragment_to_newsDetailFragment,bundle)
+            findNavController().navigate(R.id.action_savedFragment_to_newsDetailFragment,bundle)
         }
     }
 
