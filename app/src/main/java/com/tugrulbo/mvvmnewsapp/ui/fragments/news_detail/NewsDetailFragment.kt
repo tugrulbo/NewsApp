@@ -14,6 +14,7 @@ import com.tugrulbo.mvvmnewsapp.databinding.NewsDetailFragmentBinding
 import com.tugrulbo.mvvmnewsapp.models.Article
 import com.tugrulbo.mvvmnewsapp.ui.NewsViewModel
 import com.tugrulbo.mvvmnewsapp.ui.activity.MainActivity
+import com.tugrulbo.mvvmnewsapp.util.extensions.showMessage
 import okhttp3.internal.wait
 
 class NewsDetailFragment : Fragment() {
@@ -35,6 +36,7 @@ class NewsDetailFragment : Fragment() {
         viewModel = (activity as MainActivity).viewModel
 
         setupData()
+        onClicks()
     }
 
     private fun setupData(){
@@ -44,5 +46,12 @@ class NewsDetailFragment : Fragment() {
             loadUrl(article.url)
         }
 
+    }
+
+    private fun onClicks(){
+        binding.fab.setOnClickListener {
+            viewModel.saveArticle(args.article)
+            showMessage(getString(R.string.saved_successfully))
+        }
     }
 }
