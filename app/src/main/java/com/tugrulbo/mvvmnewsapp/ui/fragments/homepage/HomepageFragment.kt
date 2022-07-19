@@ -23,7 +23,6 @@ import com.tugrulbo.mvvmnewsapp.util.Constants.BUNDLE_KEY
 import com.tugrulbo.mvvmnewsapp.util.Constants.COUNTRY_CODE
 import com.tugrulbo.mvvmnewsapp.util.Constants.QUERY_PAGE_SIZE
 import com.tugrulbo.mvvmnewsapp.util.Resource
-import com.tugrulbo.mvvmnewsapp.util.extensions.isVisible
 import com.tugrulbo.mvvmnewsapp.util.extensions.showMessage
 
 class HomepageFragment : Fragment() {
