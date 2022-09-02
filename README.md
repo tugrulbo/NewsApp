@@ -4,7 +4,6 @@
 - Getting news data from API, saving liked news, searching news
 
 # Contents
-- MVVM
 - Room
 - Retrofit
 - Pagination
